@@ -1,5 +1,4 @@
-# Calibration Matters: Tackling Maximization Bias in Large-scale Advertising
-Recommendation Systems
+# Calibration Matters: Tackling Maximization Bias in Large-scale Advertising Recommendation Systems
 
 VAD-dlrm.ipynb contains code for DLRM model training, inference, and applying VAD on DLRM's model predictions. This file corresponds to experiments in Section 5.2, real-world data.
 VAD-logistic-regression.ipynb contains code for Synthetic data experiments (Section 5.1).
