@@ -844,6 +844,13 @@ def inference(
                 log_iter,
             )
         acc_test = validation_results["accuracy"]
+        if args.inference_only:
+            with open(args.dump_json_file, 'w') as file_object:
+                data = {
+                    'targets': targets.tolist(),
+                    'scores': scores.tolist(),
+                }
+                json.dump(data, file_object)
     else:
         acc_test = test_accu / test_samp
         writer.add_scalar("Test/Acc", acc_test, log_iter)
@@ -1007,6 +1014,9 @@ def run():
     parser.add_argument("--lr-num-warmup-steps", type=int, default=0)
     parser.add_argument("--lr-decay-start-step", type=int, default=0)
     parser.add_argument("--lr-num-decay-steps", type=int, default=0)
+    parser.add_argument("--dump-json-file", type=str, default="result.json")
+    parser.add_argument("--test-data-split", type=str, default="test")
+ 
 
     global args
     global nbatches

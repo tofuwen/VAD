@@ -538,7 +538,7 @@ def make_criteo_data_and_loaders(args, offset_to_length_converter=False):
             args.max_ind_range,
             args.data_sub_sample_rate,
             args.data_randomize,
-            "test",
+            args.test_data_split,
             args.raw_data_file,
             args.processed_data_file,
             args.memory_map,
